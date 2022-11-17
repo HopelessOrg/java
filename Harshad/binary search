@@ -1,0 +1,80 @@
+
+// binary search 😎🤦‍♂️🤦‍♂️🤦‍♂️🤦‍♂️
+
+/*
+i = us for looping;
+n = is a size of list.
+
+*/
+
+
+#include <stdio.h>
+#define size 100
+int main()
+{
+
+    int list[size], i, n, item;
+    int mid;
+
+    printf("enter size of list : ");
+
+    scanf("%d", &n);
+
+    printf("enter values of list :");
+
+    for (int i = 0; i < n; i++)
+    {
+
+        scanf("%d", &list[i]);
+    }
+
+    printf("enter item to be seached ");
+
+    scanf("%d", &item);
+
+    printf("your search value  %d \n", item);
+
+    int bg = 0;
+    int end = (n - 1);
+    int found = -1;
+
+    for (i = 0; i < n; i++)
+    {
+        mid = (bg + (end)) / 2;
+
+        // printf("show mid value %d \n ", mid);
+
+        if (item == list[mid])
+        {
+            found = mid;
+        }
+        else if (item < list[mid])
+        {
+            end = mid - 1;
+        }
+        else if (item > list[mid])
+        {
+            bg = mid + 1;
+        }
+    }
+
+    if (found != -1)
+    {
+        printf("Item found at index %d\n", found);
+    }
+    else {
+        printf("Item not found in the list !!\n");
+    }
+    return 0;
+}
+
+
+ /*output: 
+ 
+ enter size of list  15
+ enter values of list 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+ enter item to be search 13
+ your search value 13
+ item found at index 12
+ */
+ 
