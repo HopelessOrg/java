@@ -1,1 +1,31 @@
+//Buffere with exception.
 
+import java.io.*;
+
+class pro_Buffer {
+
+    public static void main(String[] args) {
+
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println(" Enter your number 1 :");
+
+            String s1 = br.readLine();
+
+            System.out.println(" Enter your number 2 :");
+
+            String s2 = br.readLine();
+            System.out.println(s1 + s2);
+
+            int a = Integer.parseInt(s1);
+            int b = Integer.parseInt(s2);
+
+            System.out.println(a + b);
+
+        } catch (Exception e) {
+
+            System.out.println(" please enter only nubers to add");
+        }
+
+    }
+}
